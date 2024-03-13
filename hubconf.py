@@ -4,7 +4,7 @@ import torch
 # Зависимости, необходимые для вашей модели
 dependencies = ['torch', 'yaml']
 
-def _create(name, pretrained=True, channels=3, classes=80, autoshape=True, verbose=True, device=None):
+def _create(name, pretrained=True, channels=3, classes=63, autoshape=True, verbose=True, device=None):
     """
     Universal model creation function for YOLOv5 models.
     """
@@ -29,7 +29,7 @@ def _create(name, pretrained=True, channels=3, classes=80, autoshape=True, verbo
 
     return model
 
-def custom(path='best.pt', channels=3, classes=63, autoshape=True, verbose=True, device=None):
+def custom(path='best.pt', pretrained=True, channels=3, classes=63, autoshape=True, verbose=True, device=None):
     """
     Custom model loader. Loads a custom YOLOv5 model from a specified path.
     """
