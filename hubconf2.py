@@ -1,5 +1,5 @@
+
 import torch
-from pathlib import Path
 
 # Зависимости, необходимые для вашей модели
 dependencies = ['torch', 'yaml']
@@ -17,10 +17,7 @@ def _create(name, pretrained=True, channels=3, classes=63, autoshape=True, verbo
     set_logging(verbose=verbose)
 
     # Model path
-    model_path = Path('best.pt') if pretrained and name == 'custom' else Path(name)
-
-    # Ensure the model path is correct for the OS
-    model_path = model_path.as_posix()
+    model_path = 'best.pt' if pretrained and name == 'custom' else name
 
     # Load model
     device = select_device(device)
@@ -36,6 +33,4 @@ def custom(path='best.pt', pretrained=True, channels=3, classes=63, autoshape=Tr
     """
     Custom model loader. Loads a custom YOLOv5 model from a specified path.
     """
-    # Convert the path to a format that's correct for the OS
-    path = Path(path).as_posix()
-    return _create(path, pretrained=pretrained, autoshape=autoshape, verbose=verbose, device=device)
+    return _create(path, pretrained=True, autoshape=autoshape, verbose=verbose, device=device)
