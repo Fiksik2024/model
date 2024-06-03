@@ -40,3 +40,8 @@ def custom_grz(path='grz.pt', pretrained=True, channels=3, classes=63, autoshape
     Loads a custom YOLOv5 model named 'grz.pt' from a specified path.
     """
     return _create(path, pretrained=pretrained, autoshape=autoshape, verbose=verbose, device=device)
+def custom_model(path='model.pt', pretrained=True, channels=3, classes=11, autoshape=True, verbose=True, device=None):
+    """
+    Loads a custom YOLOv5 model named 'model.pt' from a specified path.
+    """
+    return _create(path, pretrained=pretrained, autoshape=autoshape, verbose=verbose, device=device)
