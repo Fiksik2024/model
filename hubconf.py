@@ -45,7 +45,7 @@ def custom_model(path='model.pt', pretrained=True, channels=3, classes=11, autos
     Loads a custom YOLOv5 model named 'model.pt' from a specified path.
     """
     return _create(path, pretrained=pretrained, autoshape=autoshape, verbose=verbose, device=device)
-def segment(path='yolov5s-seg.pt', pretrained=True, channels=3, classes=11, autoshape=True, verbose=True, device=None):
+def segment(path='yolov5s-seg.pt', pretrained=True, channels=3, classes=79, autoshape=True, verbose=True, device=None):
     """
     Loads a custom YOLOv5 model named 'model.pt' from a specified path.
     """
