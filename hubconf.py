@@ -34,6 +34,13 @@ def custom_brand(path='brand.pt', pretrained=True, channels=3, classes=62, autos
     Custom model loader. Loads a custom YOLOv5 model from a specified path.
     """
     return _create(path, pretrained=True, autoshape=autoshape, verbose=verbose, device=device)
+
+def main_model(path='main_model.pt', pretrained=True, channels=3, classes=94, autoshape=True, verbose=True, device=None):
+    """
+    Custom model loader. Loads a custom YOLOv5 model from a specified path.
+    """
+    return _create(path, pretrained=True, autoshape=autoshape, verbose=verbose, device=device)
+    
     
 def custom_grz(path='grz.pt', pretrained=True, channels=3, classes=22, autoshape=True, verbose=True, device=None):
     """
